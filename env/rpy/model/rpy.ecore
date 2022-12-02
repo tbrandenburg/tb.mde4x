@@ -1,0 +1,1228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="tb.mde4x.rpy" nsURI="http://rpy/rpy.ecore" nsPrefix="rpy">
+  <eClassifiers xsi:type="ecore:EEnum" name="ActivationMode">
+    <eLiterals name="initial" literal="initial"/>
+    <eLiterals name="invariant" value="1" literal="invariant"/>
+    <eLiterals name="activation_mode_unspecified" value="2" literal="activation_mode_unspecified"/>
+    <eLiterals name="unknown" value="3" literal="unknown"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="BuildKind">
+    <eLiterals name="library" literal="library"/>
+    <eLiterals name="executable" value="1" literal="executable"/>
+    <eLiterals name="unknown" value="2" literal="unknown"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="BuildSetKind">
+    <eLiterals name="debug" literal="debug"/>
+    <eLiterals name="release" value="1" literal="release"/>
+    <eLiterals name="unknown" value="2" literal="unknown"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="CollaborationMode">
+    <eLiterals name="existential" literal="existential"/>
+    <eLiterals name="universal" value="1" literal="universal"/>
+    <eLiterals name="collaboration_mode_unspecified" value="2" literal="collaboration_mode_unspecified"/>
+    <eLiterals name="unknown" value="3" literal="unknown"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ConnectorKind">
+    <eLiterals name="condition" literal="condition"/>
+    <eLiterals name="fork" value="1" literal="fork"/>
+    <eLiterals name="history" value="2" literal="history"/>
+    <eLiterals name="join" value="3" literal="join"/>
+    <eLiterals name="termination" value="4" literal="termination"/>
+    <eLiterals name="unknown" value="5" literal="unknown"/>
+    <eLiterals name="junction" value="6" literal="junction"/>
+    <eLiterals name="diagram" value="7" literal="diagram"/>
+    <eLiterals name="stub" value="8" literal="stub"/>
+    <eLiterals name="inPin" value="9" literal="inPin"/>
+    <eLiterals name="outPin" value="10" literal="outPin"/>
+    <eLiterals name="inOutPin" value="11" literal="inOutPin"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="FileKind">
+    <eLiterals name="folder" literal="folder"/>
+    <eLiterals name="implementation" value="1" literal="implementation"/>
+    <eLiterals name="specification" value="2" literal="specification"/>
+    <eLiterals name="logical" value="3" literal="logical"/>
+    <eLiterals name="other" value="4" literal="other"/>
+    <eLiterals name="unknown" value="5" literal="unknown"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="InstrumentationKind">
+    <eLiterals name="none" literal="none"/>
+    <eLiterals name="trace" value="1" literal="trace"/>
+    <eLiterals name="animate" value="2" literal="animate"/>
+    <eLiterals name="unknown" value="3" literal="unknown"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="MessageKind">
+    <eLiterals name="create" literal="create"/>
+    <eLiterals name="destroy" value="1" literal="destroy"/>
+    <eLiterals name="event" value="2" literal="event"/>
+    <eLiterals name="operation" value="3" literal="operation"/>
+    <eLiterals name="trigger" value="4" literal="trigger"/>
+    <eLiterals name="timeout" value="5" literal="timeout"/>
+    <eLiterals name="cancel_tm" value="6" literal="cancel_tm"/>
+    <eLiterals name="reply" value="7" literal="reply"/>
+    <eLiterals name="time_interval" value="8" literal="time_interval"/>
+    <eLiterals name="message_type_unspecified" value="9" literal="message_type_unspecified"/>
+    <eLiterals name="unknown" value="10" literal="unknown"/>
+    <eLiterals name="constructor" value="11" literal="constructor"/>
+    <eLiterals name="destructor" value="12" literal="destructor"/>
+    <eLiterals name="condition" value="13" literal="condition"/>
+    <eLiterals name="lost" value="14" literal="lost"/>
+    <eLiterals name="found" value="15" literal="found"/>
+    <eLiterals name="stop" value="16" literal="stop"/>
+    <eLiterals name="dataflow" value="17" literal="dataflow"/>
+    <eLiterals name="duration_observation" value="18" literal="duration_observation"/>
+    <eLiterals name="duration_constraint" value="19" literal="duration_constraint"/>
+    <eLiterals name="time_observation" value="20" literal="time_observation"/>
+    <eLiterals name="time_constraint" value="21" literal="time_constraint"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="MessagePointKind">
+    <eLiterals name="sent" literal="sent"/>
+    <eLiterals name="arrived" value="1" literal="arrived"/>
+    <eLiterals name="unknown" value="2" literal="unknown"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="RelationKind">
+    <eLiterals name="association" literal="association"/>
+    <eLiterals name="aggregation" value="1" literal="aggregation"/>
+    <eLiterals name="composition" value="2" literal="composition"/>
+    <eLiterals name="unknown" value="3" literal="unknown"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="RoleKind">
+    <eLiterals name="role_type_unspecified" literal="role_type_unspecified"/>
+    <eLiterals name="systemBorder" value="1" literal="systemBorder"/>
+    <eLiterals name="class" value="2" literal="class"/>
+    <eLiterals name="actor" value="3" literal="actor"/>
+    <eLiterals name="multipleObjects" value="4" literal="multipleObjects"/>
+    <eLiterals name="specified" value="5" literal="specified"/>
+    <eLiterals name="unknown" value="6" literal="unknown"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ScopeKind">
+    <eLiterals name="explicit" literal="explicit"/>
+    <eLiterals name="derived" value="1" literal="derived"/>
+    <eLiterals name="unknown" value="2" literal="unknown"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="StatechartImplementation">
+    <eLiterals name="flat" literal="flat"/>
+    <eLiterals name="reusable" value="1" literal="reusable"/>
+    <eLiterals name="unknown" value="2" literal="unknown"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="StateKind">
+    <eLiterals name="or" literal="or"/>
+    <eLiterals name="and" value="1" literal="and"/>
+    <eLiterals name="action" value="2" literal="action"/>
+    <eLiterals name="object_flow" value="3" literal="object_flow"/>
+    <eLiterals name="block" value="4" literal="block"/>
+    <eLiterals name="sub_activity" value="5" literal="sub_activity"/>
+    <eLiterals name="reference_activity" value="6" literal="reference_activity"/>
+    <eLiterals name="local_termination" value="7" literal="local_termination"/>
+    <eLiterals name="unknown" value="8" literal="unknown"/>
+    <eLiterals name="event_state" value="9" literal="event_state"/>
+    <eLiterals name="call_operation" value="10" literal="call_operation"/>
+    <eLiterals name="accept_event_action" value="11" literal="accept_event_action"/>
+    <eLiterals name="flow_final" value="12" literal="flow_final"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TimeModelKind">
+    <eLiterals name="real" literal="real"/>
+    <eLiterals name="simulated" value="1" literal="simulated"/>
+    <eLiterals name="unknown" value="2" literal="unknown"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ToolSetKind">
+    <eLiterals name="demo" literal="demo"/>
+    <eLiterals name="development_edition" value="1" literal="development_edition"/>
+    <eLiterals name="designer" value="2" literal="designer"/>
+    <eLiterals name="unknown" value="3" literal="unknown"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="VisibilityKind">
+    <eLiterals name="public" literal="public"/>
+    <eLiterals name="protected" value="1" literal="protected"/>
+    <eLiterals name="private" value="2" literal="private"/>
+    <eLiterals name="unknown" value="3" literal="unknown"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActivityDiagram" eSuperTypes="#//StatechartDiagram">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="flowchart" ordered="false"
+        lowerBound="1" eType="#//Flowchart"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Actor" eSuperTypes="#//Classifier">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isBehaviorOverriden" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Argument" eSuperTypes="#//Variable">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="argumentDirection" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AssociationClass" eSuperTypes="#//Class">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isClass" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end1" ordered="false" eType="#//Relation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end2" ordered="false" eType="#//Relation"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Attribute" eSuperTypes="#//Variable">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="visibility" ordered="false"
+        lowerBound="1" eType="#//VisibilityKind"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isStatic" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiplicity" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isOrdered" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isReference" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isConstant" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AttributeValue" eSuperTypes="http://www.eclipse.org/emf/2002/Ecore#//EModelElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" ordered="false"
+        eType="#//Attribute"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Annotation" abstract="true" eSuperTypes="#//ModelElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="body" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="specification" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="anchoredByMe" ordered="false"
+        upperBound="-1" eType="#//ModelElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Application" eSuperTypes="http://www.eclipse.org/emf/2002/Ecore#//EModelElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Language" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ToolSet" ordered="false"
+        lowerBound="1" eType="#//ToolSetKind"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="BuildNo" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="SerialNo" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="OMROOT" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isHiddenUI" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="projects" ordered="false"
+        upperBound="-1" eType="#//Project"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="activeProject" ordered="false"
+        eType="#//Project"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="factoryProperties" ordered="false"
+        upperBound="-1" eType="#//Property"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="siteProperties" ordered="false"
+        upperBound="-1" eType="#//Property"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="selectedElements" ordered="false"
+        upperBound="-1" eType="#//ModelElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="selectedElement" ordered="false"
+        eType="#//ModelElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AcceptEventAction" eSuperTypes="#//State">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="event" ordered="false"
+        eType="#//Event"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Action" eSuperTypes="#//ModelElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="body" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ASCIIFile" eSuperTypes="http://www.eclipse.org/emf/2002/Ecore#//EModelElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="interfaceName" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AcceptTimeEvent" eSuperTypes="#//State">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="durationTime" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AssociationRole" eSuperTypes="#//ModelElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="roleType" ordered="false"
+        lowerBound="1" eType="#//RoleKind"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="classifierRoles" ordered="false"
+        upperBound="-1" eType="#//ClassifierRole"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="formalRelations" ordered="false"
+        upperBound="-1" eType="#//Relation"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Class" eSuperTypes="#//Classifier">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isBehaviorOverriden" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isActive" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isComposite" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isReactive" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isAbstract" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CollaborationDiagram" eSuperTypes="#//Diagram">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="logicalCollaboration" ordered="false"
+        eType="#//Collaboration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentDiagram" eSuperTypes="#//Diagram"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentInstance" eSuperTypes="#//ModelElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="componentType" ordered="false"
+        eType="#//Component"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="node" ordered="false" eType="#//Node"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Configuration" eSuperTypes="#//ModelElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="compilerSwitches" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="linkSwitches" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="libraries" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="additionalSources" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="standardHeaders" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="includePath" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="initializationCode" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="scopeType" ordered="false"
+        lowerBound="1" eType="#//ScopeKind"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instrumentationType" ordered="false"
+        lowerBound="1" eType="#//InstrumentationKind"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeModel" ordered="false"
+        lowerBound="1" eType="#//TimeModelKind"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="statechartImplementation"
+        ordered="false" lowerBound="1" eType="#//StatechartImplementation"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="buildSet" ordered="false"
+        lowerBound="1" eType="#//BuildSetKind"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="allElementsInInstrumentationScope"
+        ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="generateCodeForActors"
+        ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="directory" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mainName" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="makefileName" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetName" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="executableName" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="instrumentationScope" ordered="false"
+        upperBound="-1" eType="#//ModelElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="initialInstances" ordered="false"
+        upperBound="-1" eType="#//ModelElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="component" ordered="false"
+        eType="#//Component" eOpposite="#//Component/configurations"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Component" eSuperTypes="#//Unit">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="buildType" ordered="false"
+        lowerBound="1" eType="#//BuildKind"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="libraries" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="additionalSources" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="standardHeaders" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="includePath" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="scopeBySelectedElements"
+        ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scopeElements" ordered="false"
+        upperBound="-1" eType="#//ModelElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nestedComponents" ordered="false"
+        upperBound="-1" eType="#//Component"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="files" ordered="false"
+        upperBound="-1" eType="#//File"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="configurations" ordered="false"
+        upperBound="-1" eType="#//Configuration" eOpposite="#//Configuration/component"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variationPoints" upperBound="-1"
+        eType="#//VariationPoint" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Constraint" eSuperTypes="#//Annotation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="constraintsByMe" ordered="false"
+        upperBound="-1" eType="#//ModelElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ContextSpecification" eSuperTypes="#//ValueSpecification">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiplicities" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" upperBound="-1"
+        eType="#//ModelElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ControlledFile" eSuperTypes="#//Unit">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fullPathFileName" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Classifier" abstract="true" eSuperTypes="#//Unit">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" ordered="false"
+        upperBound="-1" eType="#//Attribute"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interfaceItems" ordered="false"
+        upperBound="-1" eType="#//InterfaceItem"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operations" ordered="false"
+        upperBound="-1" eType="#//Operation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relations" ordered="false"
+        upperBound="-1" eType="#//Relation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nestedClassifiers" ordered="false"
+        upperBound="-1" eType="#//Classifier"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" ordered="false"
+        eType="#//Statechart"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="activityDiagram" ordered="false"
+        eType="#//Flowchart"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="links" ordered="false"
+        upperBound="-1" eType="#//Link"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="flows" ordered="false"
+        upperBound="-1" eType="#//Flow"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="flowItems" ordered="false"
+        upperBound="-1" eType="#//FlowItem"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ports" ordered="false"
+        upperBound="-1" eType="#//Instance"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="derivedClassifiers" ordered="false"
+        upperBound="-1" eType="#//Classifier" eOpposite="#//Classifier/baseClassifiers"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="baseClassifiers" ordered="false"
+        upperBound="-1" eType="#//Classifier" eOpposite="#//Classifier/derivedClassifiers"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="generalizations" ordered="false"
+        upperBound="-1" eType="#//Generalization" eOpposite="#//Generalization/derivedClass"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="behavioralDiagrams" ordered="false"
+        upperBound="-1" eType="#//Statechart"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sequenceDiagrams" ordered="false"
+        upperBound="-1" eType="#//SequenceDiagram"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClassifierRole" eSuperTypes="#//ModelElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="roleType" ordered="false"
+        lowerBound="1" eType="#//RoleKind"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="formalClassifier" ordered="false"
+        eType="#//Classifier"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="referencedSequenceDiagram"
+        ordered="false" eType="#//SequenceDiagram"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="formalInstance" ordered="false"
+        eType="#//Instance"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CallOperation" eSuperTypes="#//State">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operation" ordered="false"
+        lowerBound="1" eType="#//InterfaceItem"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Collaboration" eSuperTypes="#//ModelElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="activationCondition" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="activationMode" ordered="false"
+        lowerBound="1" eType="#//ActivationMode"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mode" ordered="false" lowerBound="1"
+        eType="#//CollaborationMode"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="classifier" ordered="false"
+        upperBound="-1" eType="#//ClassifierRole"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="associations" ordered="false"
+        upperBound="-1" eType="#//AssociationRole"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="messages" ordered="false"
+        upperBound="-1" eType="#//Message"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="messagePoints" ordered="false"
+        upperBound="-1" eType="#//MessagePoint"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interactionOccurrences"
+        ordered="false" upperBound="-1" eType="#//InteractionOccurrence"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="executionOccurrences" ordered="false"
+        upperBound="-1" eType="#//ExecutionOccurrence"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interactionOperators" ordered="false"
+        upperBound="-1" eType="#//InteractionOperator"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Comment" eSuperTypes="#//Annotation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Connector" eSuperTypes="#//StateVertex">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="connectorType" ordered="false"
+        lowerBound="1" eType="#//ConnectorKind"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="derivedInEdges" ordered="false"
+        upperBound="-1" eType="#//Transition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="derivedOutEdge" ordered="false"
+        eType="#//Transition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ofState" ordered="false"
+        eType="#//State"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Diagram" abstract="true" eSuperTypes="#//Unit">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="graphicalElements" ordered="false"
+        upperBound="-1" eType="#//GraphElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elementsInDiagram" ordered="false"
+        upperBound="-1" eType="#//ModelElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DeploymentDiagram" eSuperTypes="#//Diagram"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Dependency" eSuperTypes="#//ModelElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dependsOn" ordered="false"
+        eType="#//ModelElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dependent" ordered="false"
+        eType="#//ModelElement" eOpposite="#//ModelElement/dependencies"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EnumerationLiteral" eSuperTypes="#//ModelElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EventReception" eSuperTypes="#//InterfaceItem">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="event" ordered="false"
+        eType="#//Event"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Event" eSuperTypes="#//InterfaceItem">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="superEvent" ordered="false"
+        eType="#//Event"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="baseEvent" ordered="false"
+        eType="#//Event"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExecutionOccurrence" eSuperTypes="#//ModelElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="message" ordered="false"
+        eType="#//Message"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Flow" eSuperTypes="#//ModelElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="direction" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conveyed" ordered="false"
+        upperBound="-1" eType="#//ModelElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end1" ordered="false" eType="#//ModelElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end2" ordered="false" eType="#//ModelElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end1Port" ordered="false"
+        eType="#//Port"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end2Port" ordered="false"
+        eType="#//Port"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end1SysMLPort" ordered="false"
+        eType="#//SysMLPort"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end2SysMLPort" ordered="false"
+        eType="#//SysMLPort"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FlowItem" eSuperTypes="#//Classifier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="represented" ordered="false"
+        upperBound="-1" eType="#//ModelElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="File" eSuperTypes="#//Unit">
+    <eOperations name="getFilePath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eParameters name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fileType" ordered="false"
+        lowerBound="1" eType="#//FileKind"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="impName" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="specName" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="files" ordered="false"
+        upperBound="-1" eType="#//File"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" ordered="false"
+        upperBound="-1" eType="#//ModelElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fileFragments" ordered="false"
+        upperBound="-1" eType="#//FileFragment"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FileFragment" eSuperTypes="#//ModelElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fragmentType" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fragmentText" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fragmentElement" ordered="false"
+        eType="#//ModelElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Flowchart" eSuperTypes="#//Statechart">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isAnalysisOnly" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="swimlanes" ordered="false"
+        upperBound="-1" eType="#//Swimlane"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="flowchartDiagram" ordered="false"
+        eType="#//ActivityDiagram"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Generalization" eSuperTypes="#//ModelElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="visibility" ordered="false"
+        lowerBound="1" eType="#//VisibilityKind"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isVirtual" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="extensionPoint" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="baseClass" ordered="false"
+        eType="#//Classifier"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="derivedClass" ordered="false"
+        eType="#//Classifier" eOpposite="#//Classifier/generalizations"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GraphElement" abstract="true" eSuperTypes="http://www.eclipse.org/emf/2002/Ecore#//EModelElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="interfaceName" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="modelObject" ordered="false"
+        eType="#//ModelElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="graphicalParent" ordered="false"
+        eType="#//GraphElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="graphicalProperties" ordered="false"
+        upperBound="-1" eType="#//GraphicalProperty"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GraphEdge" eSuperTypes="#//GraphElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" ordered="false"
+        eType="#//GraphElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" ordered="false"
+        eType="#//GraphElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containingArrow" ordered="false"
+        eType="#//GraphEdge"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GraphicalProperty" eSuperTypes="http://www.eclipse.org/emf/2002/Ecore#//EModelElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="interfaceName" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GraphNode" eSuperTypes="#//GraphElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Guard" eSuperTypes="#//ModelElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="body" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HyperLink" eSuperTypes="#//Dependency">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="URL" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" ordered="false"
+        eType="#//ModelElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InterfaceItem" abstract="true" eSuperTypes="#//Classifier">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="signature" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arguments" ordered="false"
+        upperBound="-1" eType="#//Argument"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Instance" eSuperTypes="#//Relation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="initializerArguments" ordered="false"
+        unique="false" upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="instantiatedBy" ordered="false"
+        eType="#//Operation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inLinks" ordered="false"
+        upperBound="-1" eType="#//Link"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outLinks" ordered="false"
+        upperBound="-1" eType="#//Link"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attributeValues" ordered="false"
+        upperBound="-1" eType="#//AttributeValue"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InstanceValue" eSuperTypes="#//ValueSpecification">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" ordered="false"
+        lowerBound="1" eType="#//ModelElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InstanceSpecification" eSuperTypes="#//ModelElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="classifier" eType="#//Classifier"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="instanceSlots" upperBound="-1"
+        eType="#//InstanceSlot" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InstanceSlot" eSuperTypes="#//ModelElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="slotProperty" eType="#//ModelElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="values" upperBound="-1"
+        eType="#//ValueSpecification" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InteractionOccurrence" eSuperTypes="#//ModelElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="referenceSequenceDiagram"
+        ordered="false" eType="#//SequenceDiagram"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="messagePoints" ordered="false"
+        upperBound="-1" eType="#//MessagePoint"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InteractionOperand" eSuperTypes="#//Collaboration">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="interactionConstraint"
+        ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InteractionOperator" eSuperTypes="#//ModelElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="interactionType" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interactionOperands" ordered="false"
+        upperBound="-1" eType="#//InteractionOperand"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ImageMap" eSuperTypes="http://www.eclipse.org/emf/2002/Ecore#//EModelElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="shape" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="points" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="target" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isGUID" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pictureFileName" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="interfaceName" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Link" eSuperTypes="#//ModelElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="end1Name" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="end2Name" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="end1Multiplicity" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="end2Multiplicity" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="instantiates" ordered="false"
+        eType="#//Relation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from" ordered="false" eType="#//ModelElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="to" ordered="false" eType="#//ModelElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="other" ordered="false"
+        eType="#//Link"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fromPort" ordered="false"
+        eType="#//Port"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="toPort" ordered="false"
+        eType="#//Port"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fromSysMLPort" ordered="false"
+        eType="#//SysMLPort"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="toSysMLPort" ordered="false"
+        eType="#//SysMLPort"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Label" eSuperTypes="http://www.eclipse.org/emf/2002/Ecore#//EModelElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LiteralSpecification" eSuperTypes="#//ValueSpecification">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Message" eSuperTypes="#//ModelElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="actualParameterList" ordered="false"
+        unique="false" upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="messageType" ordered="false"
+        lowerBound="1" eType="#//MessageKind"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sequenceNumber" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="returnValue" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="condition" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timerValue" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="signature" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" ordered="false"
+        eType="#//ClassifierRole"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" ordered="false"
+        eType="#//ClassifierRole"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="formalInterfaceItem" ordered="false"
+        eType="#//InterfaceItem"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="communicationConnection"
+        ordered="false" eType="#//AssociationRole"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourceExecutionOccurrence"
+        ordered="false" eType="#//ExecutionOccurrence"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetExecutionOccurrence"
+        ordered="false" eType="#//ExecutionOccurrence"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="flowPort" ordered="false"
+        eType="#//SysMLPort"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MessagePoint" eSuperTypes="#//ModelElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" ordered="false" lowerBound="1"
+        eType="#//MessagePointKind"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="message" ordered="false"
+        eType="#//Message"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interactionOccurrence"
+        ordered="false" eType="#//InteractionOccurrence"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interactionOperator" ordered="false"
+        eType="#//InteractionOperator"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="classifierRole" ordered="false"
+        eType="#//ClassifierRole"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModelElement" abstract="true" eSuperTypes="http://www.eclipse.org/emf/2002/Ecore#//EModelElement">
+    <eOperations name="getProperty" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eParameters name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="metaClass" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="requirementTraceabilityHandle"
+        ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="GUID" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="displayName" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isShowDisplayName" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="descriptionRTF" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="descriptionHTML" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isExternal" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="userDefinedMetaClass" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isUnresolved" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="interfaceName" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fullPathName" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isATemplate" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="owner" ordered="false"
+        eType="#//ModelElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="project" ordered="false"
+        eType="#//Project"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stereotype" ordered="false"
+        eType="#//Stereotype"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ti" ordered="false" eType="#//TemplateInstantiation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ofTemplate" ordered="false"
+        eType="#//ModelElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="constraints" ordered="false"
+        upperBound="-1" eType="#//Constraint"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="constraintsByHim" ordered="false"
+        upperBound="-1" eType="#//Constraint"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="templateParameters" ordered="false"
+        upperBound="-1" eType="#//TemplateParameter"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mainDiagram" ordered="false"
+        eType="#//Diagram"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="annotations" ordered="false"
+        upperBound="-1" eType="#//Annotation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dependencies" ordered="false"
+        upperBound="-1" eType="#//Dependency" eOpposite="#//Dependency/dependent"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hyperLinks" ordered="false"
+        upperBound="-1" eType="#//HyperLink"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="localTags" ordered="false"
+        upperBound="-1" eType="#//Tag"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allTags" ordered="false"
+        upperBound="-1" eType="#//Tag"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="references" ordered="false"
+        upperBound="-1" eType="#//ModelElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controlledFiles" ordered="false"
+        upperBound="-1" eType="#//ControlledFile"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stereotypes" ordered="false"
+        upperBound="-1" eType="#//Stereotype"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="properties" ordered="false"
+        upperBound="-1" eType="#//Property"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedDependencies" upperBound="-1"
+        eType="#//Dependency" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Module" eSuperTypes="#//Instance"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Node" eSuperTypes="#//Classifier">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="CPUtype" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstances" ordered="false"
+        upperBound="-1" eType="#//ComponentInstance"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ObjectModelDiagram" eSuperTypes="#//Diagram"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Operation" eSuperTypes="#//InterfaceItem">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="visibility" ordered="false"
+        lowerBound="1" eType="#//VisibilityKind"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isStatic" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isVirtual" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isConst" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="body" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isCgDerived" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isCtor" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isDtor" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="initializer" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isTrigger" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isFinal" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isAbstract" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isInline" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="implementationSignature"
+        ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="flowchart" ordered="false"
+        eType="#//Flowchart"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="returns" ordered="false"
+        eType="#//Classifier"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ObjectNode" eSuperTypes="#//State">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="represents" ordered="false"
+        lowerBound="1" eType="#//ModelElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Package" eSuperTypes="#//Unit">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="eventsBaseId" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="savedInSeperateDirectory"
+        ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nestedClassifiers" ordered="false"
+        upperBound="-1" eType="#//ModelElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="objectModelDiagrams" ordered="false"
+        upperBound="-1" eType="#//ObjectModelDiagram"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sequenceDiagrams" ordered="false"
+        upperBound="-1" eType="#//SequenceDiagram"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="useCaseDiagrams" ordered="false"
+        upperBound="-1" eType="#//UseCaseDiagram"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="packages" ordered="false"
+        upperBound="-1" eType="#//Package"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="classes" ordered="false"
+        upperBound="-1" eType="#//Class"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actors" ordered="false"
+        upperBound="-1" eType="#//Actor"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="useCases" ordered="false"
+        upperBound="-1" eType="#//UseCase"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="types" ordered="false"
+        upperBound="-1" eType="#//Type"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="events" ordered="false"
+        upperBound="-1" eType="#//Event"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="globalVariables" ordered="false"
+        upperBound="-1" eType="#//Attribute"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="globalFunctions" ordered="false"
+        upperBound="-1" eType="#//Operation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="globalObjects" ordered="false"
+        upperBound="-1" eType="#//Relation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="collaborationDiagrams"
+        ordered="false" upperBound="-1" eType="#//CollaborationDiagram"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="componentDiagrams" ordered="false"
+        upperBound="-1" eType="#//ComponentDiagram"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nodes" ordered="false"
+        upperBound="-1" eType="#//Node"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="deploymentDiagrams" ordered="false"
+        upperBound="-1" eType="#//DeploymentDiagram"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="links" ordered="false"
+        upperBound="-1" eType="#//Link"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="modules" ordered="false"
+        upperBound="-1" eType="#//Module"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nestedComponents" ordered="false"
+        upperBound="-1" eType="#//Component"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="flows" ordered="false"
+        upperBound="-1" eType="#//Flow"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="flowItems" ordered="false"
+        upperBound="-1" eType="#//FlowItem"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="userDefinedStereotypes"
+        ordered="false" upperBound="-1" eType="#//Stereotype"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="behavioralDiagrams" ordered="false"
+        upperBound="-1" eType="#//Statechart"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="instanceSpecifications"
+        upperBound="-1" eType="#//InstanceSpecification" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Project" eSuperTypes="#//Package">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultDirectoryScheme"
+        ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allStereotypes" ordered="false"
+        upperBound="-1" eType="#//Stereotype"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="components" ordered="false"
+        upperBound="-1" eType="#//Component"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="activeComponent" ordered="false"
+        eType="#//Component"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="activeConfiguration" ordered="false"
+        eType="#//Configuration"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="profiles" ordered="false"
+        upperBound="-1" eType="#//Profile"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cgSimplifiedModelPackage"
+        ordered="false" eType="#//Package"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Port" eSuperTypes="#//Instance">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isBehavioral" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isReversed" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contract" ordered="false"
+        eType="#//Class"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requiredInterfaces" ordered="false"
+        upperBound="-1" eType="#//Class"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="providedInterfaces" ordered="false"
+        upperBound="-1" eType="#//Class"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Pin" eSuperTypes="#//Connector">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isParameter" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pinType" ordered="false"
+        eType="#//Classifier"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Property" eSuperTypes="http://www.eclipse.org/emf/2002/Ecore#//EModelElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Profile" eSuperTypes="#//Package"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Requirement" eSuperTypes="#//Annotation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="requirementID" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Relation" eSuperTypes="#//Unit">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="relationRoleName" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiplicity" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="qualifier" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="relationType" ordered="false"
+        lowerBound="1" eType="#//RelationKind"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="visibility" ordered="false"
+        lowerBound="1" eType="#//VisibilityKind"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isSymmetric" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="relationLinkName" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="relationLabel" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isNavigable" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isTypelessObject" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ofClass" ordered="false"
+        eType="#//Classifier"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="otherClass" ordered="false"
+        eType="#//Classifier"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inverse" ordered="false"
+        eType="#//Relation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ObjectAsObjectType" ordered="false"
+        eType="#//Class"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="associationClass" ordered="false"
+        eType="#//AssociationClass"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="qualifierType" eType="#//Classifier"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SendAction" eSuperTypes="#//Action">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="argumentValues" ordered="false"
+        unique="false" upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" ordered="false"
+        eType="#//ModelElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="event" ordered="false"
+        eType="#//Event"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StatechartDiagram" eSuperTypes="#//Diagram">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" ordered="false"
+        lowerBound="1" eType="#//Statechart"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="State" eSuperTypes="#//StateVertex">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stateType" ordered="false"
+        lowerBound="1" eType="#//StateKind"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="entryAction" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="exitAction" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isOverridden" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isReferenceActivity" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fullNameInStatechart" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isAnd" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isCompound" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isLeaf" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isRoot" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nestedStatechart" ordered="false"
+        eType="#//Statechart"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" ordered="false"
+        eType="#//Statechart"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subStateVertices" ordered="false"
+        upperBound="-1" eType="#//StateVertex" eOpposite="#//StateVertex/parent"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="defaultTransition" ordered="false"
+        eType="#//Transition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="referenceToActivity" ordered="false"
+        eType="#//ModelElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inheritsFrom" ordered="false"
+        eType="#//State"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="logicalStates" ordered="false"
+        upperBound="-1" eType="#//State"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="staticReactions" ordered="false"
+        upperBound="-1" eType="#//Transition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subStates" ordered="false"
+        upperBound="-1" eType="#//State"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sendAction" ordered="false"
+        eType="#//SendAction"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StateVertex" abstract="true" eSuperTypes="#//ModelElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parent" ordered="false"
+        eType="#//State" eOpposite="#//State/subStateVertices"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outTransitions" ordered="false"
+        upperBound="-1" eType="#//Transition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inTransitions" ordered="false"
+        upperBound="-1" eType="#//Transition" eOpposite="#//Transition/target"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="swimlane" ordered="false"
+        eType="#//Swimlane" eOpposite="#//Swimlane/contents"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SequenceDiagram" eSuperTypes="#//Diagram">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="logicalCollaboration" ordered="false"
+        eType="#//Collaboration"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relatedUseCases" ordered="false"
+        upperBound="-1" eType="#//UseCase" eOpposite="#//UseCase/describingDiagrams"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Stereotype" eSuperTypes="#//Classifier">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="icon" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ofMetaClass" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isNewTerm" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StructureDiagram" eSuperTypes="#//Diagram"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Statechart" eSuperTypes="#//Class">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isOverridden" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isMainBehavior" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rootState" ordered="false"
+        eType="#//State"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="itsClass" ordered="false"
+        eType="#//Classifier"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allTriggers" ordered="false"
+        upperBound="-1" eType="#//InterfaceItem"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inheritsFrom" ordered="false"
+        eType="#//Statechart"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statechartDiagram" ordered="false"
+        eType="#//StatechartDiagram"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Swimlane" eSuperTypes="#//ModelElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="represents" ordered="false"
+        eType="#//ModelElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contents" ordered="false"
+        upperBound="-1" eType="#//StateVertex" eOpposite="#//StateVertex/swimlane"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="swimlanes" ordered="false"
+        upperBound="-1" eType="#//Swimlane"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SysMLPort" eSuperTypes="#//Instance">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isReversed" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="portDirection" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" ordered="false" eType="#//Classifier"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TemplateParameter" eSuperTypes="#//Variable">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="typeName" ordered="false"
+        eType="#//Type"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="representative" ordered="false"
+        lowerBound="1" eType="#//ModelElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Tag" eSuperTypes="#//Variable">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tagMetaClass" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiplicity" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fromProfile" ordered="false"
+        eType="#//Profile"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base" ordered="false" eType="#//Tag"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="valueSpecification" ordered="false"
+        upperBound="-1" eType="#//ValueSpecification"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TimingDiagram" eSuperTypes="#//SequenceDiagram"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Trigger" eSuperTypes="#//ModelElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="body" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isOperationTrigger" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isTimeout" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operation" ordered="false"
+        eType="#//InterfaceItem"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Transition" eSuperTypes="#//ModelElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="itsLabel" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isOverridden" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isDefaultTransition" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isStaticReaction" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" ordered="false"
+        eType="#//Statechart"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inheritsFrom" ordered="false"
+        eType="#//Transition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="action" ordered="false"
+        eType="#//Action"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="guard" ordered="false"
+        eType="#//Guard"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="trigger" ordered="false"
+        eType="#//Trigger"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ofState" ordered="false"
+        eType="#//State"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="compoundSource" ordered="false"
+        upperBound="-1" eType="#//State"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" ordered="false"
+        eType="#//StateVertex" eOpposite="#//StateVertex/inTransitions"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" ordered="false"
+        eType="#//StateVertex"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TemplateInstantiation" eSuperTypes="#//ModelElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="templateInstantiationParameters"
+        ordered="false" upperBound="-1" eType="#//TemplateInstantiationParameter"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TemplateInstantiationParameter" eSuperTypes="#//ModelElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="argValue" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//Classifier"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Type" eSuperTypes="#//Classifier">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isTypedef" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isPredefined" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="declaration" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="typedefMultiplicity" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isTypedefOrdered" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isTypedefReference" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isTypedefConstant" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isArray" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isEnum" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isImplicit" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isKindEnumeration" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isKindLanguage" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isKindStructure" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isKindTypedef" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isKindUnion" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isPointer" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isPointerToPointer" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isReference" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isReferenceToPointer" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isStruct" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isTemplate" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isUnion" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="typedefBaseType" ordered="false"
+        eType="#//Classifier"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="enumerationLiterals" ordered="false"
+        upperBound="-1" eType="#//EnumerationLiteral"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UseCaseDiagram" eSuperTypes="#//Diagram"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UseCase" eSuperTypes="#//Classifier">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="entryPoints" ordered="false"
+        unique="false" upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="extensionPoints" ordered="false"
+        unique="false" upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isBehaviorOverriden" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="describingDiagrams" ordered="false"
+        upperBound="-1" eType="#//SequenceDiagram" eOpposite="#//SequenceDiagram/relatedUseCases"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Unit" abstract="true" eSuperTypes="#//ModelElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="CMHeader" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="filename" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="currentDirectory" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isStub" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="includeInNextLoad" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isReadOnly" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isSeparateSaveUnit" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="language" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lastModifiedTime" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isReferenceUnit" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="structureDiagrams" ordered="false"
+        upperBound="-1" eType="#//StructureDiagram"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ValueSpecification" eSuperTypes="#//ModelElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="VariationPoint" eSuperTypes="http://www.eclipse.org/emf/2002/Ecore#//EModelElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variationPoint" lowerBound="1"
+        eType="#//Class"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variant" eType="#//Class"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Variable" abstract="true" eSuperTypes="#//ModelElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="declaration" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultValue" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" ordered="false" eType="#//Classifier"/>
+  </eClassifiers>
+</ecore:EPackage>

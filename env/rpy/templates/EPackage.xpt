@@ -1,0 +1,3 @@
+«DEFINE E FOR ecore::EPackage»
+«EXPAND EClassifier::E FOREACH eClassifiers»
+«ENDDEFINE»

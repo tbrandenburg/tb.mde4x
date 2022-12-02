@@ -1,0 +1,42 @@
+module GenerateModel
+
+var rootPath = ".."
+
+Workflow {
+    bean = org.eclipse.emf.mwe.utils.StandaloneSetup {
+        projectMapping = {
+            path = "${rootPath}/tb.mde4x"
+            projectName = "tb.mde4x"
+        }
+    }
+
+    component = org.eclipse.emf.mwe.utils.DirectoryCleaner {
+        directory ="src-gen/tb/mde4x/rpy/reader"
+    }
+
+    component =  org.eclipse.emf.mwe.utils.Reader {
+		id = "reader"
+		uri = "env/rpy/model/rpy.ecore"
+		modelSlot = "model"
+	}
+
+    component = org.eclipse.xpand2.Generator {
+        id = "generator"
+		expand = "env::rpy::templates::EPackage::E FOR model"
+		fileEncoding = "UTF-8"
+			
+		metaModel = org.eclipse.xtend.typesystem.emf.EmfRegistryMetaModel {}
+		metaModel = org.eclipse.xtend.typesystem.emf.EmfMetaModel {
+			metaModelPackage = "org.eclipse.emf.ecore.EcorePackage"
+		}
+				
+		outlet = {
+			fileEncoding = "UTF-8"
+			path = "src-gen/tb/mde4x/rpy/reader"
+			postprocessor = org.eclipse.xpand2.output.JavaBeautifier {}
+		}
+		resourceManager = org.eclipse.xtend.expression.ResourceManagerDefaultImpl {
+			fileEncoding = "UTF-8"
+		}
+	}
+}

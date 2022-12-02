@@ -1,0 +1,7 @@
+«DEFINE E FOR ecore::EClass»«IF !abstract && !eSuperTypes.contains(ecore::EModelElement)»
+«FILE name + ".java"»package tb.mde4x.rpy.reader;
+
+import com.telelogic.rhapsody.core.IRP«name»;
+«ENDFILE»«ENDIF»«ENDDEFINE»
+
+«DEFINE E FOR ecore::EClassifier»«ENDDEFINE»

@@ -1,0 +1,101 @@
+plugins {
+  id "java"
+  id "eclipse"
+  id "org.xtext.builder" version "3.0.2"
+}
+
+repositories {
+  jcenter()
+}
+
+apply plugin: "org.xtext.xtend"
+
+ext {
+  mwe2Version = "2.11.1"
+  xtextVersion = "2.20.0"
+  eclipsePluginsDir = "c:/tools/Eclipse/2019-12/plugins"
+}
+
+sourceSets {
+  main {
+    // Compiled Java classes should use this directory
+    java.destinationDirectory.set(file("bin"))
+    // Were to search for java source files
+    java.srcDirs = [
+      "src",
+      "src-gen/"
+    ]
+    // Were to search for resources
+    resources.srcDirs = [
+      "src-gen/"
+    ]
+  }
+}
+
+/*
+jar {
+  from("model") {
+    into("model")
+  }
+  manifest {
+    attributes "Bundle-SymbolicName": project.name
+  }
+}
+*/
+
+dependencies {
+  implementation "org.eclipse.xtext:org.eclipse.xtext:${xtextVersion}"
+  implementation "org.eclipse.xtext:org.eclipse.xtext.xbase:${xtextVersion}"
+  implementation files("lib/rhapsody.jar")
+}
+
+configurations {
+  all {
+    exclude group: "asm"
+  }
+  mwe2 {
+    extendsFrom implementation
+  }
+}
+
+dependencies {
+  mwe2 "org.eclipse.emf:org.eclipse.emf.mwe2.launch:${mwe2Version}"
+  mwe2 "org.eclipse.xtext:org.eclipse.xtext.xtext.generator:${xtextVersion}"
+  mwe2 "org.eclipse.xtext:org.eclipse.xtext.common.types:${xtextVersion}"
+  mwe2 "org.eclipse.xtext:xtext-antlr-generator:[2.1.1, 3)"
+  mwe2 fileTree(dir: "${eclipsePluginsDir}", include: ['org.eclipse.xtend.typesystem.emf_*.jar'])
+  mwe2 fileTree(dir: "${eclipsePluginsDir}", include: ['org.eclipse.xtend_*.jar'])
+  mwe2 fileTree(dir: "${eclipsePluginsDir}", include: ['org.eclipse.xpand_*.jar'])
+  mwe2 fileTree(dir: "${eclipsePluginsDir}", include: ['org.eclipse.emf.mapping.ecore2xml_*.jar'])
+  mwe2 fileTree(dir: "${eclipsePluginsDir}", include: ['org.eclipse.core.runtime_*.jar'])
+  mwe2 fileTree(dir: "${eclipsePluginsDir}", include: ['org.eclipse.core.resources_*.jar'])
+  mwe2 fileTree(dir: "${eclipsePluginsDir}", include: ['org.eclipse.core.jobs_*.jar'])
+  mwe2 fileTree(dir: "${eclipsePluginsDir}", include: ['org.eclipse.core.contenttype_*.jar'])
+  mwe2 fileTree(dir: "${eclipsePluginsDir}", include: ['org.eclipse.jface_*.jar'])
+  mwe2 fileTree(dir: "${eclipsePluginsDir}", include: ['org.eclipse.jface.text_*.jar'])
+  mwe2 fileTree(dir: "${eclipsePluginsDir}", include: ['org.eclipse.jdt.core_*.jar'])
+  mwe2 fileTree(dir: "${eclipsePluginsDir}", include: ['org.eclipse.text_*.jar'])
+  mwe2 fileTree(dir: "${eclipsePluginsDir}", include: ['org.eclipse.equinox.preferences_*.jar'])
+}
+
+task generateRpyModel(type: JavaExec) {
+  main = "org.eclipse.emf.mwe2.launch.runtime.Mwe2Launcher"
+  classpath = configurations.mwe2
+  inputs.file "env/rpy/workflow/GenerateModel.mwe2"
+  args += "env/rpy/workflow/GenerateModel.mwe2"
+}
+
+task generateRpyCOMReader(type: JavaExec) {
+  main = "org.eclipse.emf.mwe2.launch.runtime.Mwe2Launcher"
+  classpath = configurations.mwe2
+  inputs.file "env/rpy/workflow/GenerateCOMReader.mwe2"
+  args += "env/rpy/workflow/GenerateCOMReader.mwe2"
+}
+
+generateXtext.dependsOn(generateRpyModel)
+generateXtext.dependsOn(generateRpyCOMReader)
+generateRpyCOMReader.dependsOn(generateRpyModel)
+
+clean.dependsOn(cleanGenerateRpyModel)
+
+eclipse.classpath.plusConfigurations += [configurations.mwe2]

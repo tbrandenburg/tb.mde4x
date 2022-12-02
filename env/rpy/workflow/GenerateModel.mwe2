@@ -1,0 +1,22 @@
+module GenerateModel
+
+var rootPath = ".."
+
+Workflow {
+    bean = org.eclipse.emf.mwe.utils.StandaloneSetup {
+        projectMapping = {
+            path = "${rootPath}/tb.mde4x"
+            projectName = "tb.mde4x"
+        }
+    }
+
+    component = org.eclipse.emf.mwe.utils.DirectoryCleaner {
+        directory ="src-gen/tb/mde4x/rpy"
+    }
+
+    component = org.eclipse.emf.mwe2.ecore.EcoreGenerator {
+        generateCustomClasses = true
+        genModel = "platform:/resource/tb.mde4x/env/rpy/model/rpy.genmodel"
+        srcPath = "platform:/resource/tb.mde4x/src-gen/"
+    }
+}

@@ -1,0 +1,795 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/tb.mde4x/src-gen/" modelPluginID="tb.mde4x.rpy"
+    modelName="Rpy" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>rpy.ecore</foreignModel>
+  <genPackages prefix="Rpy" disposableProviderFactory="true" loadInitialization="true"
+      literalsInterface="false" ecorePackage="rpy.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="rpy.ecore#//ActivationMode">
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//ActivationMode/initial"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//ActivationMode/invariant"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//ActivationMode/activation_mode_unspecified"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//ActivationMode/unknown"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="rpy.ecore#//BuildKind">
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//BuildKind/library"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//BuildKind/executable"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//BuildKind/unknown"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="rpy.ecore#//BuildSetKind">
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//BuildSetKind/debug"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//BuildSetKind/release"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//BuildSetKind/unknown"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="rpy.ecore#//CollaborationMode">
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//CollaborationMode/existential"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//CollaborationMode/universal"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//CollaborationMode/collaboration_mode_unspecified"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//CollaborationMode/unknown"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="rpy.ecore#//ConnectorKind">
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//ConnectorKind/condition"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//ConnectorKind/fork"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//ConnectorKind/history"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//ConnectorKind/join"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//ConnectorKind/termination"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//ConnectorKind/unknown"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//ConnectorKind/junction"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//ConnectorKind/diagram"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//ConnectorKind/stub"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//ConnectorKind/inPin"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//ConnectorKind/outPin"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//ConnectorKind/inOutPin"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="rpy.ecore#//FileKind">
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//FileKind/folder"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//FileKind/implementation"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//FileKind/specification"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//FileKind/logical"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//FileKind/other"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//FileKind/unknown"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="rpy.ecore#//InstrumentationKind">
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//InstrumentationKind/none"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//InstrumentationKind/trace"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//InstrumentationKind/animate"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//InstrumentationKind/unknown"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="rpy.ecore#//MessageKind">
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//MessageKind/create"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//MessageKind/destroy"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//MessageKind/event"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//MessageKind/operation"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//MessageKind/trigger"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//MessageKind/timeout"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//MessageKind/cancel_tm"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//MessageKind/reply"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//MessageKind/time_interval"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//MessageKind/message_type_unspecified"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//MessageKind/unknown"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//MessageKind/constructor"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//MessageKind/destructor"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//MessageKind/condition"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//MessageKind/lost"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//MessageKind/found"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//MessageKind/stop"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//MessageKind/dataflow"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//MessageKind/duration_observation"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//MessageKind/duration_constraint"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//MessageKind/time_observation"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//MessageKind/time_constraint"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="rpy.ecore#//MessagePointKind">
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//MessagePointKind/sent"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//MessagePointKind/arrived"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//MessagePointKind/unknown"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="rpy.ecore#//RelationKind">
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//RelationKind/association"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//RelationKind/aggregation"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//RelationKind/composition"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//RelationKind/unknown"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="rpy.ecore#//RoleKind">
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//RoleKind/role_type_unspecified"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//RoleKind/systemBorder"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//RoleKind/class"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//RoleKind/actor"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//RoleKind/multipleObjects"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//RoleKind/specified"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//RoleKind/unknown"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="rpy.ecore#//ScopeKind">
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//ScopeKind/explicit"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//ScopeKind/derived"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//ScopeKind/unknown"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="rpy.ecore#//StatechartImplementation">
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//StatechartImplementation/flat"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//StatechartImplementation/reusable"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//StatechartImplementation/unknown"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="rpy.ecore#//StateKind">
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//StateKind/or"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//StateKind/and"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//StateKind/action"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//StateKind/object_flow"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//StateKind/block"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//StateKind/sub_activity"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//StateKind/reference_activity"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//StateKind/local_termination"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//StateKind/unknown"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//StateKind/event_state"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//StateKind/call_operation"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//StateKind/accept_event_action"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//StateKind/flow_final"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="rpy.ecore#//TimeModelKind">
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//TimeModelKind/real"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//TimeModelKind/simulated"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//TimeModelKind/unknown"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="rpy.ecore#//ToolSetKind">
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//ToolSetKind/demo"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//ToolSetKind/development_edition"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//ToolSetKind/designer"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//ToolSetKind/unknown"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="rpy.ecore#//VisibilityKind">
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//VisibilityKind/public"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//VisibilityKind/protected"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//VisibilityKind/private"/>
+      <genEnumLiterals ecoreEnumLiteral="rpy.ecore#//VisibilityKind/unknown"/>
+    </genEnums>
+    <genClasses ecoreClass="rpy.ecore#//ActivityDiagram">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//ActivityDiagram/flowchart"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//Actor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Actor/isBehaviorOverriden"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//Argument">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Argument/argumentDirection"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//AssociationClass">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//AssociationClass/isClass"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//AssociationClass/end1"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//AssociationClass/end2"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//Attribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Attribute/visibility"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Attribute/isStatic"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Attribute/multiplicity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Attribute/isOrdered"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Attribute/isReference"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Attribute/isConstant"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//AttributeValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//AttributeValue/value"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//AttributeValue/attribute"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="rpy.ecore#//Annotation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Annotation/body"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Annotation/specification"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Annotation/anchoredByMe"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//Application">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Application/Language"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Application/ToolSet"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Application/BuildNo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Application/SerialNo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Application/OMROOT"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Application/isHiddenUI"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Application/version"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Application/projects"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Application/activeProject"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Application/factoryProperties"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Application/siteProperties"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Application/selectedElements"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Application/selectedElement"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//AcceptEventAction">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//AcceptEventAction/event"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//Action">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Action/body"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//ASCIIFile">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//ASCIIFile/interfaceName"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//AcceptTimeEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//AcceptTimeEvent/durationTime"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//AssociationRole">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//AssociationRole/roleType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//AssociationRole/classifierRoles"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//AssociationRole/formalRelations"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//Class">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Class/isBehaviorOverriden"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Class/isActive"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Class/isComposite"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Class/isReactive"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Class/isAbstract"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//CollaborationDiagram">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//CollaborationDiagram/logicalCollaboration"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//ComponentDiagram"/>
+    <genClasses ecoreClass="rpy.ecore#//ComponentInstance">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//ComponentInstance/componentType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//ComponentInstance/node"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//Configuration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Configuration/compilerSwitches"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Configuration/linkSwitches"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Configuration/libraries"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Configuration/additionalSources"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Configuration/standardHeaders"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Configuration/includePath"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Configuration/initializationCode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Configuration/scopeType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Configuration/instrumentationType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Configuration/timeModel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Configuration/statechartImplementation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Configuration/buildSet"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Configuration/allElementsInInstrumentationScope"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Configuration/generateCodeForActors"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Configuration/path"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Configuration/directory"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Configuration/mainName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Configuration/makefileName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Configuration/targetName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Configuration/executableName"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Configuration/instrumentationScope"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Configuration/initialInstances"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Configuration/component"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//Component">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Component/buildType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Component/libraries"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Component/additionalSources"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Component/standardHeaders"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Component/includePath"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Component/scopeBySelectedElements"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Component/path"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Component/scopeElements"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Component/nestedComponents"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Component/files"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Component/configurations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rpy.ecore#//Component/variationPoints"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//Constraint">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Constraint/constraintsByMe"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//ContextSpecification">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//ContextSpecification/multiplicities"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//ContextSpecification/value"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//ControlledFile">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//ControlledFile/fullPathFileName"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="rpy.ecore#//Classifier">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Classifier/attributes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Classifier/interfaceItems"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Classifier/operations"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Classifier/relations"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Classifier/nestedClassifiers"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Classifier/statechart"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Classifier/activityDiagram"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Classifier/links"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Classifier/flows"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Classifier/flowItems"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Classifier/ports"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Classifier/derivedClassifiers"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Classifier/baseClassifiers"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Classifier/generalizations"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Classifier/behavioralDiagrams"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Classifier/sequenceDiagrams"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//ClassifierRole">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//ClassifierRole/roleType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//ClassifierRole/formalClassifier"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//ClassifierRole/referencedSequenceDiagram"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//ClassifierRole/formalInstance"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//CallOperation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//CallOperation/operation"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//Collaboration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Collaboration/activationCondition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Collaboration/activationMode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Collaboration/mode"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Collaboration/classifier"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Collaboration/associations"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Collaboration/messages"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Collaboration/messagePoints"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Collaboration/interactionOccurrences"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Collaboration/executionOccurrences"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Collaboration/interactionOperators"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//Comment"/>
+    <genClasses ecoreClass="rpy.ecore#//Connector">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Connector/connectorType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Connector/derivedInEdges"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Connector/derivedOutEdge"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Connector/ofState"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="rpy.ecore#//Diagram">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Diagram/graphicalElements"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Diagram/elementsInDiagram"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//DeploymentDiagram"/>
+    <genClasses ecoreClass="rpy.ecore#//Dependency">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Dependency/dependsOn"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Dependency/dependent"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//EnumerationLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//EnumerationLiteral/value"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//EventReception">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//EventReception/event"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//Event">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Event/superEvent"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Event/baseEvent"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//ExecutionOccurrence">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//ExecutionOccurrence/message"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//Flow">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Flow/direction"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Flow/conveyed"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Flow/end1"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Flow/end2"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Flow/end1Port"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Flow/end2Port"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Flow/end1SysMLPort"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Flow/end2SysMLPort"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//FlowItem">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//FlowItem/represented"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//File">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//File/fileType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//File/path"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//File/impName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//File/specName"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//File/files"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//File/elements"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//File/fileFragments"/>
+      <genOperations ecoreOperation="rpy.ecore#//File/getFilePath">
+        <genParameters ecoreParameter="rpy.ecore#//File/getFilePath/key"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//FileFragment">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//FileFragment/fragmentType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//FileFragment/fragmentText"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//FileFragment/fragmentElement"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//Flowchart">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Flowchart/isAnalysisOnly"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Flowchart/swimlanes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Flowchart/flowchartDiagram"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//Generalization">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Generalization/visibility"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Generalization/isVirtual"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Generalization/extensionPoint"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Generalization/baseClass"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Generalization/derivedClass"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="rpy.ecore#//GraphElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//GraphElement/interfaceName"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//GraphElement/modelObject"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//GraphElement/graphicalParent"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//GraphElement/graphicalProperties"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//GraphEdge">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//GraphEdge/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//GraphEdge/target"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//GraphEdge/containingArrow"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//GraphicalProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//GraphicalProperty/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//GraphicalProperty/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//GraphicalProperty/interfaceName"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//GraphNode"/>
+    <genClasses ecoreClass="rpy.ecore#//Guard">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Guard/body"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//HyperLink">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//HyperLink/URL"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//HyperLink/target"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="rpy.ecore#//InterfaceItem">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//InterfaceItem/signature"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//InterfaceItem/arguments"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//Instance">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Instance/initializerArguments"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Instance/instantiatedBy"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Instance/inLinks"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Instance/outLinks"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Instance/attributeValues"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//InstanceValue">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//InstanceValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//InstanceSpecification">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//InstanceSpecification/classifier"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rpy.ecore#//InstanceSpecification/instanceSlots"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//InstanceSlot">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//InstanceSlot/slotProperty"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rpy.ecore#//InstanceSlot/values"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//InteractionOccurrence">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//InteractionOccurrence/referenceSequenceDiagram"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//InteractionOccurrence/messagePoints"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//InteractionOperand">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//InteractionOperand/interactionConstraint"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//InteractionOperator">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//InteractionOperator/interactionType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//InteractionOperator/interactionOperands"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//ImageMap">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//ImageMap/shape"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//ImageMap/points"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//ImageMap/target"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//ImageMap/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//ImageMap/isGUID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//ImageMap/pictureFileName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//ImageMap/interfaceName"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//Link">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Link/end1Name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Link/end2Name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Link/end1Multiplicity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Link/end2Multiplicity"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Link/instantiates"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Link/from"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Link/to"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Link/other"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Link/fromPort"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Link/toPort"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Link/fromSysMLPort"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Link/toSysMLPort"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//Label"/>
+    <genClasses ecoreClass="rpy.ecore#//LiteralSpecification">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//LiteralSpecification/value"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//Message">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Message/actualParameterList"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Message/messageType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Message/sequenceNumber"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Message/returnValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Message/condition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Message/timerValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Message/signature"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Message/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Message/target"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Message/formalInterfaceItem"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Message/communicationConnection"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Message/sourceExecutionOccurrence"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Message/targetExecutionOccurrence"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Message/flowPort"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//MessagePoint">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//MessagePoint/type"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//MessagePoint/message"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//MessagePoint/interactionOccurrence"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//MessagePoint/interactionOperator"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//MessagePoint/classifierRole"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="rpy.ecore#//ModelElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//ModelElement/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//ModelElement/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//ModelElement/metaClass"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//ModelElement/requirementTraceabilityHandle"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//ModelElement/GUID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//ModelElement/displayName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//ModelElement/isShowDisplayName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//ModelElement/descriptionRTF"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//ModelElement/descriptionHTML"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//ModelElement/isExternal"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//ModelElement/userDefinedMetaClass"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//ModelElement/isUnresolved"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//ModelElement/interfaceName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//ModelElement/fullPathName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//ModelElement/isATemplate"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//ModelElement/owner"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//ModelElement/project"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//ModelElement/stereotype"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//ModelElement/ti"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//ModelElement/ofTemplate"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//ModelElement/constraints"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//ModelElement/constraintsByHim"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//ModelElement/templateParameters"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//ModelElement/mainDiagram"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//ModelElement/annotations"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//ModelElement/dependencies"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//ModelElement/hyperLinks"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//ModelElement/localTags"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//ModelElement/allTags"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//ModelElement/references"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//ModelElement/controlledFiles"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//ModelElement/stereotypes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//ModelElement/properties"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rpy.ecore#//ModelElement/ownedDependencies"/>
+      <genOperations ecoreOperation="rpy.ecore#//ModelElement/getProperty">
+        <genParameters ecoreParameter="rpy.ecore#//ModelElement/getProperty/key"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//Module"/>
+    <genClasses ecoreClass="rpy.ecore#//Node">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Node/CPUtype"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Node/componentInstances"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//ObjectModelDiagram"/>
+    <genClasses ecoreClass="rpy.ecore#//Operation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Operation/visibility"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Operation/isStatic"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Operation/isVirtual"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Operation/isConst"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Operation/body"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Operation/isCgDerived"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Operation/isCtor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Operation/isDtor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Operation/initializer"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Operation/isTrigger"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Operation/isFinal"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Operation/isAbstract"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Operation/isInline"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Operation/implementationSignature"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Operation/flowchart"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Operation/returns"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//ObjectNode">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//ObjectNode/represents"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//Package">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Package/eventsBaseId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Package/savedInSeperateDirectory"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Package/nestedClassifiers"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Package/objectModelDiagrams"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Package/sequenceDiagrams"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Package/useCaseDiagrams"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Package/packages"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Package/classes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Package/actors"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Package/useCases"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Package/types"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Package/events"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Package/globalVariables"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Package/globalFunctions"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Package/globalObjects"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Package/collaborationDiagrams"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Package/componentDiagrams"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Package/nodes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Package/deploymentDiagrams"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Package/links"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Package/modules"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Package/nestedComponents"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Package/flows"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Package/flowItems"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Package/userDefinedStereotypes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Package/behavioralDiagrams"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rpy.ecore#//Package/instanceSpecifications"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//Project">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Project/defaultDirectoryScheme"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Project/allStereotypes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Project/components"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Project/activeComponent"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Project/activeConfiguration"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Project/profiles"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Project/cgSimplifiedModelPackage"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//Port">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Port/isBehavioral"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Port/isReversed"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Port/contract"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Port/requiredInterfaces"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Port/providedInterfaces"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//Pin">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Pin/isParameter"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Pin/pinType"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//Property">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Property/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Property/value"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//Profile"/>
+    <genClasses ecoreClass="rpy.ecore#//Requirement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Requirement/requirementID"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//Relation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Relation/relationRoleName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Relation/multiplicity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Relation/qualifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Relation/relationType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Relation/visibility"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Relation/isSymmetric"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Relation/relationLinkName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Relation/relationLabel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Relation/isNavigable"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Relation/isTypelessObject"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Relation/ofClass"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Relation/otherClass"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Relation/inverse"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Relation/ObjectAsObjectType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Relation/associationClass"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Relation/qualifierType"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//SendAction">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//SendAction/argumentValues"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//SendAction/target"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//SendAction/event"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//StatechartDiagram">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//StatechartDiagram/statechart"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//State">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//State/stateType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//State/entryAction"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//State/exitAction"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//State/isOverridden"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//State/isReferenceActivity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//State/fullNameInStatechart"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//State/isAnd"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//State/isCompound"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//State/isLeaf"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//State/isRoot"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//State/nestedStatechart"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//State/statechart"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//State/subStateVertices"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//State/defaultTransition"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//State/referenceToActivity"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//State/inheritsFrom"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//State/logicalStates"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//State/staticReactions"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//State/subStates"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//State/sendAction"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="rpy.ecore#//StateVertex">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//StateVertex/parent"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//StateVertex/outTransitions"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//StateVertex/inTransitions"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//StateVertex/swimlane"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//SequenceDiagram">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//SequenceDiagram/logicalCollaboration"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//SequenceDiagram/relatedUseCases"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//Stereotype">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Stereotype/icon"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Stereotype/ofMetaClass"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Stereotype/isNewTerm"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//StructureDiagram"/>
+    <genClasses ecoreClass="rpy.ecore#//Statechart">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Statechart/isOverridden"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Statechart/isMainBehavior"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Statechart/rootState"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Statechart/itsClass"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Statechart/allTriggers"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Statechart/inheritsFrom"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Statechart/statechartDiagram"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//Swimlane">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Swimlane/represents"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Swimlane/contents"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Swimlane/swimlanes"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//SysMLPort">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//SysMLPort/isReversed"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//SysMLPort/portDirection"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//SysMLPort/type"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//TemplateParameter">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//TemplateParameter/typeName"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//TemplateParameter/representative"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//Tag">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Tag/tagMetaClass"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Tag/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Tag/multiplicity"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Tag/fromProfile"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Tag/base"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Tag/valueSpecification"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//TimingDiagram"/>
+    <genClasses ecoreClass="rpy.ecore#//Trigger">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Trigger/body"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Trigger/isOperationTrigger"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Trigger/isTimeout"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Trigger/operation"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//Transition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Transition/itsLabel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Transition/isOverridden"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Transition/isDefaultTransition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Transition/isStaticReaction"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Transition/statechart"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Transition/inheritsFrom"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Transition/action"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Transition/guard"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Transition/trigger"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Transition/ofState"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Transition/compoundSource"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Transition/target"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Transition/source"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//TemplateInstantiation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//TemplateInstantiation/templateInstantiationParameters"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//TemplateInstantiationParameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//TemplateInstantiationParameter/argValue"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//TemplateInstantiationParameter/type"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//Type">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Type/isTypedef"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Type/isPredefined"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Type/declaration"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Type/kind"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Type/typedefMultiplicity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Type/isTypedefOrdered"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Type/isTypedefReference"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Type/isTypedefConstant"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Type/isArray"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Type/isEnum"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Type/isImplicit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Type/isKindEnumeration"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Type/isKindLanguage"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Type/isKindStructure"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Type/isKindTypedef"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Type/isKindUnion"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Type/isPointer"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Type/isPointerToPointer"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Type/isReference"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Type/isReferenceToPointer"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Type/isStruct"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Type/isTemplate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Type/isUnion"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Type/typedefBaseType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Type/enumerationLiterals"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//UseCaseDiagram"/>
+    <genClasses ecoreClass="rpy.ecore#//UseCase">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//UseCase/entryPoints"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//UseCase/extensionPoints"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//UseCase/isBehaviorOverriden"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//UseCase/describingDiagrams"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="rpy.ecore#//Unit">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Unit/CMHeader"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Unit/filename"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Unit/currentDirectory"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Unit/isStub"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Unit/includeInNextLoad"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Unit/isReadOnly"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Unit/isSeparateSaveUnit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Unit/language"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Unit/lastModifiedTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Unit/isReferenceUnit"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Unit/structureDiagrams"/>
+    </genClasses>
+    <genClasses ecoreClass="rpy.ecore#//ValueSpecification"/>
+    <genClasses ecoreClass="rpy.ecore#//VariationPoint">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//VariationPoint/variationPoint"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//VariationPoint/variant"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="rpy.ecore#//Variable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Variable/declaration"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpy.ecore#//Variable/defaultValue"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rpy.ecore#//Variable/type"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
