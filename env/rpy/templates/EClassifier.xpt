@@ -21,8 +21,25 @@ public class Rpy«name»Reader {
   public static Rpy«name»Reader instance = new Rpy«name»Reader();
 
   public «name» create(IRP«name» comObject, RpyFactory factory, Map objects, TransformPolicy policy) {
-    «name» rpyObject = null;
-    return rpyObject;
+    if (!policy.shouldExportUnresolvedElements() && comObject.getIsUnresolved() == 1) {
+      return null;
+    }
+    boolean doExport = policy.shouldBeExported((IRP«name»)comObject);
+    /* Check derived classifiers like:
+    if (comObject instanceof IRPAssociationClass) {
+      return (Class)RhapsodyAssociationClassReader.instance.build((IRPAssociationClass)comObject, factory, objects, policy);
+    }
+    */
+    // Class rhpObject = (Class)find(comObject, Class.class, objects);
+    «name» rhpObject = null;
+«IF !abstract»
+    if (rhpObject == null) {
+      rhpObject = factory.create«name»();
+      //register(comObject, rhpObject, objects);
+      transform(rhpObject, comObject, factory, objects, doExport, policy);
+    }
+«ENDIF»
+    return rhpObject;
   }
   
   public void transform(«name» rhpObject, IRP«name» comObject, RpyFactory factory, Map objects, boolean doExport, TransformPolicy policy) {
