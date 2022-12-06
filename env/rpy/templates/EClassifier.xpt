@@ -1,7 +1,20 @@
 «DEFINE E FOR ecore::EClass»«IF !abstract && !eSuperTypes.get(0).name.contains("EModelElement")»
-«FILE name + ".java"»package tb.mde4x.rpy.reader;
+«FILE "Rpy" + name + "Reader.java"»package tb.mde4x.rpy.reader;
 
+import tb.mde4x.rpy.«name»;
 import com.telelogic.rhapsody.core.IRP«name»;
+
+public class Rpy«name»Reader {
+
+  public «name» build(IRP«name» comObject) {
+    «name» rpyObject = null;
+    return rpyObject;
+  }
+  
+  public void build(«name» rhpObject, IRP«name» comObject) {
+  }
+
+}
 «ENDFILE»«ENDIF»«ENDDEFINE»
 
 «DEFINE E FOR ecore::EClassifier»«ENDDEFINE»
