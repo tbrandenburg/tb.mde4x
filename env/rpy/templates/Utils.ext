@@ -1,0 +1,6 @@
+extension org::eclipse::xtend::util::stdlib::io;
+extension org::eclipse::xtend::util::stdlib::globalvar;
+
+Void getLineSeparator():
+   JAVA java.lang.System.lineSeparator()
+;

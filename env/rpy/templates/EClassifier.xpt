@@ -1,3 +1,5 @@
+«EXTENSION env::rpy::templates::Utils»
+
 «DEFINE E FOR ecore::EClass»«IF !eSuperTypes.get(0).name.contains("EModelElement") || name == "ModelElement"»
 «FILE "Rpy" + name + "Reader.java"»package tb.mde4x.rpy.reader;
 
@@ -14,6 +16,16 @@ public class Rpy«name»Reader {
   }
   
   public void transform(«name» rhpObject, IRP«name» comObject) {
+  if (rhpObject != null) {
+      try {
+        //RhapsodyBaseClassReader.instance.build(rhpObject, comObject, factory, objects, doFullExport, reader, policy, mdwProgressMonitor);
+
+        «EXPAND ATTR_CALL FOREACH eAttributes SEPARATOR getLineSeparator()»
+        «EXPAND REF_CALL FOREACH eReferences SEPARATOR getLineSeparator()»
+      } catch (Exception e) {
+        // TODO
+      } 
+    }  
   }
 
   /* Super Types: */
@@ -64,6 +76,9 @@ public class Rpy«name»Reader {
 «ENDIF»
   }
 «ENDDEFINE»
+
+«DEFINE ATTR_CALL FOR ecore::EAttribute»transformAttribute«eContainer.name»«name.toFirstUpper()»(rhpObject, comObject);«ENDDEFINE»
+«DEFINE REF_CALL FOR ecore::EReference»transformReference«eContainer.name»«name.toFirstUpper()»(rhpObject, comObject);«ENDDEFINE»
   
 «DEFINE REF FOR ecore::EReference»
   /* «name» */
