@@ -1,5 +1,8 @@
 package tb.mde4x.rpy;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import com.telelogic.rhapsody.core.IRPApplication;
 import com.telelogic.rhapsody.core.IRPProject;
 import com.telelogic.rhapsody.core.RhapsodyAppServer;
@@ -7,12 +10,14 @@ import com.telelogic.rhapsody.core.RhapsodyAppServer;
 import tb.mde4x.rpy.Project;
 
 import tb.mde4x.rpy.reader.RpyProjectReader;
+import tb.mde4x.rpy.utils.FullModelTransformPolicy;
 
 public class RpyTransform {
     
     public static void main(String[] args) {
         IRPApplication app = null;
         IRPProject rpyPrj = null;
+        Map<String,ModelElement> objectMap = new HashMap<String, ModelElement>();
 
         System.out.println("Waiting for Rhapsody...");
 
@@ -28,8 +33,7 @@ public class RpyTransform {
                     try {
                         rpyPrj = app.activeProject();
                         
-                        RpyProjectReader prjReader = new RpyProjectReader();
-                        Project prj = prjReader.transform(rpyPrj);
+                        Project prj = RpyProjectReader.instance.create(rpyPrj, RpyFactory.eINSTANCE, objectMap, new FullModelTransformPolicy());
                         
                     } catch(Exception e) {
                         rpyPrj = null;

@@ -3,6 +3,14 @@
 «DEFINE E FOR ecore::EClass»«IF !eSuperTypes.get(0).name.contains("EModelElement") || name == "ModelElement"»
 «FILE "Rpy" + name + "Reader.java"»package tb.mde4x.rpy.reader;
 
+import tb.mde4x.rpy.RpyFactory;
+import tb.mde4x.rpy.utils.TransformPolicy;
+import tb.mde4x.rpy.utils.RpyReaderUtils;
+
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+
 import tb.mde4x.rpy.«name»;
 «EXPAND REF_IMPORT_MDE FOREACH eReferences»
 import com.telelogic.rhapsody.core.IRP«name»;
@@ -10,15 +18,17 @@ import com.telelogic.rhapsody.core.IRP«name»;
 
 public class Rpy«name»Reader {
 
-  public «name» transform(IRP«name» comObject) {
+  public static Rpy«name»Reader instance = new Rpy«name»Reader();
+
+  public «name» create(IRP«name» comObject, RpyFactory factory, Map objects, TransformPolicy policy) {
     «name» rpyObject = null;
     return rpyObject;
   }
   
-  public void transform(«name» rhpObject, IRP«name» comObject) {
+  public void transform(«name» rhpObject, IRP«name» comObject, RpyFactory factory, Map objects, boolean doExport, TransformPolicy policy) {
   if (rhpObject != null) {
       try {
-        //RhapsodyBaseClassReader.instance.build(rhpObject, comObject, factory, objects, doFullExport, reader, policy, mdwProgressMonitor);
+        //RhapsodySuperTypeReader.instance.transform(rhpObject, comObject, factory, objects, doFullExport, reader, policy, mdwProgressMonitor);
 
         «EXPAND ATTR_CALL FOREACH eAttributes SEPARATOR getLineSeparator()»
         «EXPAND REF_CALL FOREACH eReferences SEPARATOR getLineSeparator()»
@@ -50,7 +60,7 @@ public class Rpy«name»Reader {
 
 «DEFINE ATTR FOR ecore::EAttribute»
   /* «name» */
-  public void transformAttribute«eContainer.name»«name.toFirstUpper()»(«eContainer.name» rhpObject, IRP«eContainer.name» comObject) {
+  public void transformAttribute«eContainer.name»«name.toFirstUpper()»(«eContainer.name» rhpObject, IRP«eContainer.name» comObject, Map objects, boolean doExport) {
 «IF eType.name == "EInt"»  
   /*
     int rpy«name.toFirstUpper()» = comObject.get«name.toFirstUpper()»();
@@ -77,12 +87,12 @@ public class Rpy«name»Reader {
   }
 «ENDDEFINE»
 
-«DEFINE ATTR_CALL FOR ecore::EAttribute»transformAttribute«eContainer.name»«name.toFirstUpper()»(rhpObject, comObject);«ENDDEFINE»
-«DEFINE REF_CALL FOR ecore::EReference»transformReference«eContainer.name»«name.toFirstUpper()»(rhpObject, comObject);«ENDDEFINE»
+«DEFINE ATTR_CALL FOR ecore::EAttribute»transformAttribute«eContainer.name»«name.toFirstUpper()»(rhpObject, comObject, objects, doExport);«ENDDEFINE»
+«DEFINE REF_CALL FOR ecore::EReference»transformReference«eContainer.name»«name.toFirstUpper()»(rhpObject, comObject, factory, objects, doExport, policy);«ENDDEFINE»
   
 «DEFINE REF FOR ecore::EReference»
   /* «name» */
-  public void transformReference«eContainer.name»«name.toFirstUpper()»(«eContainer.name» rhpObject, IRP«eContainer.name» comObject) {
+  public void transformReference«eContainer.name»«name.toFirstUpper()»(«eContainer.name» rhpObject, IRP«eContainer.name» comObject, RpyFactory factory, Map objects, boolean doExport, TransformPolicy policy) {
   /*
     IRPCollection «name» = comObject.get«name.toFirstUpper()»();
     List «name»List = «name».toList();
