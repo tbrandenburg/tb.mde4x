@@ -1,20 +1,93 @@
-«DEFINE E FOR ecore::EClass»«IF !abstract && !eSuperTypes.get(0).name.contains("EModelElement")»
+«DEFINE E FOR ecore::EClass»«IF !eSuperTypes.get(0).name.contains("EModelElement") || name == "ModelElement"»
 «FILE "Rpy" + name + "Reader.java"»package tb.mde4x.rpy.reader;
 
 import tb.mde4x.rpy.«name»;
+«EXPAND REF_IMPORT_MDE FOREACH eReferences»
 import com.telelogic.rhapsody.core.IRP«name»;
+«EXPAND REF_IMPORT_RPY FOREACH eReferences»
 
 public class Rpy«name»Reader {
 
-  public «name» build(IRP«name» comObject) {
+  public «name» transform(IRP«name» comObject) {
     «name» rpyObject = null;
     return rpyObject;
   }
   
-  public void build(«name» rhpObject, IRP«name» comObject) {
+  public void transform(«name» rhpObject, IRP«name» comObject) {
   }
+
+  /* Super Types: */
+«EXPAND ST FOREACH eSuperTypes»
+  
+
+  /* Attributes: */
+«EXPAND ATTR FOREACH eAttributes»
+  
+
+  /* References: */
+«EXPAND REF FOREACH eReferences»
 
 }
 «ENDFILE»«ENDIF»«ENDDEFINE»
 
 «DEFINE E FOR ecore::EClassifier»«ENDDEFINE»
+
+«DEFINE ST FOR ecore::EModelElement»
+  /* «name» */
+«ENDDEFINE»
+
+«DEFINE ATTR FOR ecore::EAttribute»
+  /* «name» */
+  public void transformAttribute«eContainer.name»«name.toFirstUpper()»(«eContainer.name» rhpObject, IRP«eContainer.name» comObject) {
+«IF eType.name == "EInt"»  
+  /*
+    int rpy«name.toFirstUpper()» = comObject.get«name.toFirstUpper()»();
+    if (rpy«name.toFirstUpper()» == 0) {
+      rhpObject.set«name.toFirstUpper()»(false);
+    } else {
+      rhpObject.set«name.toFirstUpper()»(true);
+    }
+  */
+«ENDIF»
+«IF eType.name == "EBoolean"»  
+  /*
+    int rpy«name.toFirstUpper()» = comObject.get«name.toFirstUpper()»();
+    if (rpy«name.toFirstUpper()» == 0) {
+      rhpObject.set«name.toFirstUpper()»(false);
+    } else {
+      rhpObject.set«name.toFirstUpper()»(true);
+    }
+  */
+«ENDIF»
+«IF eType.name == "EString"»  
+  /*rhpObject.set«name.toFirstUpper()»(comObject.get«name.toFirstUpper()»());*/
+«ENDIF»
+  }
+«ENDDEFINE»
+  
+«DEFINE REF FOR ecore::EReference»
+  /* «name» */
+  public void transformReference«eContainer.name»«name.toFirstUpper()»(«eContainer.name» rhpObject, IRP«eContainer.name» comObject) {
+  /*
+    IRPCollection «name» = comObject.get«name.toFirstUpper()»();
+    List «name»List = «name».toList();
+    Iterator i = «name»List.iterator();
+    while (i.hasNext()) {
+      IRP«eType.name» rpy«eType.name» = (IRP«eType.name»)i.next();
+      «eType.name» «eType.name.toFirstLower()» = null;
+      if («eType.name.toFirstLower()» == null) {
+        «eType.name.toFirstLower()» = Rpy«eType.name»Reader.instance.build(rpy«eType.name»);
+      }
+      if («eType.name.toFirstLower()» != null && «eType.name.toFirstLower()» instanceof «eType.name») {
+        rhpObject.get«name.toFirstUpper()»().add(«eType.name.toFirstLower()»);
+      }
+    }
+  */
+  }
+«ENDDEFINE»
+  
+«DEFINE REF_IMPORT_MDE FOR ecore::EReference»«IF !eType.eSuperTypes.get(0).name.contains("EModelElement") || name == "ModelElement"»import tb.mde4x.rpy.«eType.name»;
+«ENDIF»«ENDDEFINE»
+
+«DEFINE REF_IMPORT_RPY FOR ecore::EReference»«IF !eType.eSuperTypes.get(0).name.contains("EModelElement") || name == "ModelElement"»import com.telelogic.rhapsody.core.IRP«eType.name»;
+«ENDIF»«ENDDEFINE»
