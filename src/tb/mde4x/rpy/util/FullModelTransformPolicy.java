@@ -72,6 +72,10 @@ public class FullModelTransformPolicy implements TransformPolicy {
     this.shouldExportFlowcharts = bool;
   }
   
+  public boolean shouldBeExported(Object obj) {
+    return false;
+  }
+  
   public boolean shouldBeExported(IRPModelElement rpObject) {
     return true;
   }

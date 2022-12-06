@@ -12,25 +12,27 @@ import com.telelogic.rhapsody.core.IRPType;
 import com.telelogic.rhapsody.core.IRPUseCase;
 
 public interface TransformPolicy {
-  boolean shouldBeExported(IRPModelElement paramIRPModelElement);
+  boolean shouldBeExported(Object obj);
+	  
+  boolean shouldBeExported(IRPModelElement irpModelElement);
   
-  boolean shouldBeExported(IRPClassifier paramIRPClassifier);
+  boolean shouldBeExported(IRPClassifier irpClassifier);
   
-  boolean shouldBeExported(IRPPackage paramIRPPackage);
+  boolean shouldBeExported(IRPPackage irpPackage);
   
-  boolean shouldBeExported(IRPProject paramIRPProject);
+  boolean shouldBeExported(IRPProject irpProject);
   
-  boolean shouldBeExported(IRPProfile paramIRPProfile);
+  boolean shouldBeExported(IRPProfile irpProfile);
   
-  boolean shouldBeExported(IRPFlowItem paramIRPFlowItem);
+  boolean shouldBeExported(IRPFlowItem irpFlowItem);
   
-  boolean shouldBeExported(IRPNode paramIRPNode);
+  boolean shouldBeExported(IRPNode irpNode);
   
-  boolean shouldBeExported(IRPType paramIRPType);
+  boolean shouldBeExported(IRPType irpType);
   
-  boolean shouldBeExported(IRPUseCase paramIRPUseCase);
+  boolean shouldBeExported(IRPUseCase irpUseCase);
   
-  boolean shouldBeExported(IRPAssociationClass paramIRPAssociationClass);
+  boolean shouldBeExported(IRPAssociationClass irpAssociationClass);
   
   boolean shouldExportAllTags();
   

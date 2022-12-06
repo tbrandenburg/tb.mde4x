@@ -4,3 +4,11 @@ extension org::eclipse::xtend::util::stdlib::globalvar;
 Void getLineSeparator():
    JAVA java.lang.System.lineSeparator()
 ;
+
+Boolean isInherited(ecore::EClass elm, String baseClass) :
+    if elm.eSuperTypes.size>0 then (
+      elm.eSuperTypes.get(0).name == baseClass ? true : elm.eSuperTypes.get(0).isInherited(baseClass)
+    ) else (
+      false
+    )
+;

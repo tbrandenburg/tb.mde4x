@@ -1,6 +1,6 @@
 «EXTENSION env::rpy::templates::Utils»
 
-«DEFINE E FOR ecore::EClass»«IF !eSuperTypes.get(0).name.contains("EModelElement") || name == "ModelElement"»
+«DEFINE E FOR ecore::EClass»«IF !eSuperTypes.get(0).name.contains("EModelElement") || name == "ModelElement" || name == "GraphElement"»
 «FILE "Rpy" + name + "Reader.java"»package tb.mde4x.rpy.reader;
 
 import tb.mde4x.rpy.RpyFactory;
@@ -21,21 +21,22 @@ public class Rpy«name»Reader {
   public static Rpy«name»Reader instance = new Rpy«name»Reader();
 
   public «name» create(IRP«name» comObject, RpyFactory factory, Map objects, TransformPolicy policy) {
+  «IF this.isInherited("ModelElement")»
     if (!policy.shouldExportUnresolvedElements() && comObject.getIsUnresolved() == 1) {
       return null;
     }
+  «ENDIF»
     boolean doExport = policy.shouldBeExported((IRP«name»)comObject);
     /* Check derived classifiers like:
     if (comObject instanceof IRPAssociationClass) {
       return (Class)RhapsodyAssociationClassReader.instance.build((IRPAssociationClass)comObject, factory, objects, policy);
     }
     */
-    // Class rhpObject = (Class)find(comObject, Class.class, objects);
-    «name» rhpObject = null;
+    «name» rhpObject = («name»)RpyReaderUtils.find(comObject, «name».class, objects);
 «IF !abstract»
     if (rhpObject == null) {
       rhpObject = factory.create«name»();
-      //register(comObject, rhpObject, objects);
+      RpyReaderUtils.register(comObject, rhpObject, objects);
       transform(rhpObject, comObject, factory, objects, doExport, policy);
     }
 «ENDIF»
@@ -45,8 +46,9 @@ public class Rpy«name»Reader {
   public void transform(«name» rhpObject, IRP«name» comObject, RpyFactory factory, Map objects, boolean doExport, TransformPolicy policy) {
   if (rhpObject != null) {
       try {
-        //RhapsodySuperTypeReader.instance.transform(rhpObject, comObject, factory, objects, doFullExport, reader, policy, mdwProgressMonitor);
-
+«IF eSuperTypes.get(0).name != "EModelElement"»
+        Rpy«eSuperTypes.get(0).name»Reader.instance.transform(rhpObject, comObject, factory, objects, doExport, policy);
+«ENDIF»
         «EXPAND ATTR_CALL FOREACH eAttributes SEPARATOR getLineSeparator()»
         «EXPAND REF_CALL FOREACH eReferences SEPARATOR getLineSeparator()»
       } catch (Exception e) {
