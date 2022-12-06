@@ -1,4 +1,4 @@
-«DEFINE E FOR ecore::EClass»«IF !abstract && !eSuperTypes.contains(ecore::EModelElement)»
+«DEFINE E FOR ecore::EClass»«IF !abstract && !eSuperTypes.get(0).name.contains("EModelElement")»
 «FILE name + ".java"»package tb.mde4x.rpy.reader;
 
 import com.telelogic.rhapsody.core.IRP«name»;
