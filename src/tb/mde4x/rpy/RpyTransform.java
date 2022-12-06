@@ -10,7 +10,7 @@ import com.telelogic.rhapsody.core.RhapsodyAppServer;
 import tb.mde4x.rpy.Project;
 
 import tb.mde4x.rpy.reader.RpyProjectReader;
-import tb.mde4x.rpy.utils.FullModelTransformPolicy;
+import tb.mde4x.rpy.util.FullModelTransformPolicy;
 
 public class RpyTransform {
     

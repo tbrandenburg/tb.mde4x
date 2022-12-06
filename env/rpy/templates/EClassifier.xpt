@@ -4,8 +4,8 @@
 «FILE "Rpy" + name + "Reader.java"»package tb.mde4x.rpy.reader;
 
 import tb.mde4x.rpy.RpyFactory;
-import tb.mde4x.rpy.utils.TransformPolicy;
-import tb.mde4x.rpy.utils.RpyReaderUtils;
+import tb.mde4x.rpy.util.TransformPolicy;
+import tb.mde4x.rpy.util.RpyReaderUtils;
 
 import java.util.Iterator;
 import java.util.List;

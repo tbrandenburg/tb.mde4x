@@ -1,4 +1,4 @@
-package tb.mde4x.rpy.utils;
+package tb.mde4x.rpy.util;
 
 public class RpyReaderUtils {
 

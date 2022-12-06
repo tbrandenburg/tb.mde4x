@@ -1,4 +1,4 @@
-package tb.mde4x.rpy.utils;
+package tb.mde4x.rpy.util;
 
 import com.telelogic.rhapsody.core.IRPAssociationClass;
 import com.telelogic.rhapsody.core.IRPClassifier;
