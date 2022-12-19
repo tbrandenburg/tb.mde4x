@@ -56,3 +56,4 @@ plugin.xml
 build.xml
 build/
 src-gen/
+build.gradle
