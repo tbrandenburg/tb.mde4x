@@ -15,6 +15,7 @@ import tb.mde4x.rpy.«name»;
 «EXPAND REF_IMPORT_MDE FOREACH eReferences»
 import com.telelogic.rhapsody.core.IRP«name»;
 «EXPAND REF_IMPORT_RPY FOREACH eReferences»
+import com.telelogic.rhapsody.core.IRPCollection;
 
 public class Rpy«name»Reader {
 
@@ -100,8 +101,19 @@ public class Rpy«name»Reader {
     }
   */
 «ENDIF»
-«IF eType.name == "EString"»  
-  /*rhpObject.set«name.toFirstUpper()»(comObject.get«name.toFirstUpper()»());*/
+«IF eType.name == "EString" && lowerBound==upperBound»
+String «name.toFirstLower()» = comObject.get«name.toFirstUpper()»();
+if(«name.toFirstLower()» != null) {
+  rhpObject.set«name.toFirstUpper()»(«name.toFirstLower()»);
+}
+«ELSEIF eType.name == "EString" && lowerBound!=upperBound»
+IRPCollection «name.toFirstLower()» = comObject.get«name.toFirstUpper()»();
+List «name.toFirstLower()»List = «name.toFirstLower()».toList();
+Iterator<String> i = «name.toFirstLower()»List.iterator();
+while (i.hasNext()) {
+  String «name.toFirstLower()»Elm = i.next();
+  rhpObject.get«name.toFirstUpper()»().add(«name.toFirstLower()»Elm);
+}
 «ENDIF»
   }
 «ENDDEFINE»
